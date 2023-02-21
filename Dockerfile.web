@@ -1,1 +1,7 @@
- 
+FROM ubuntu
+LABEL maintainer="Venelin Vasilev"
+RUN apt-get update
+RUN apt-get install -y nginx
+RUN apt-get install -y php8.2
+ENTRYPOINT ["/usr/sbin/nginx","-g","daemon off;"]
+EXPOSE 80 
